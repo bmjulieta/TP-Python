@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block contenido %}
+
+		<section class="banner">
+			<div class="content-banner">
+				<p>Los mejores profesionales</p>
+				<h2>100% remoto <br />Mejora tu presencia online</h2>
+				<a href="#">Contactanos ahora</a>
+			</div>
+		</section>
+
+		<main class="main-content">
+			<section class="container container-features">
+				<div class="card-feature">
+					<i class="fa-solid fa-plane-up"></i>
+					<div class="feature-content">
+						<span>Trabajamos en todo el mundo</span>
+						<p>Exportamos talento al mundo</p>
+					</div>
+				</div>
+				<div class="card-feature">
+					<i class="fa-solid fa-wallet"></i>
+					<div class="feature-content">
+						<span>Contrareembolso</span>
+						<p>100% garantía de devolución de dinero</p>
+					</div>
+				</div>
+				<div class="card-feature">
+					<i class="fa-solid fa-gift"></i>
+					<div class="feature-content">
+						<span>Tarjeta regalo especial</span>
+						<p>Ofrece bonos especiales con regalo</p>
+					</div>
+				</div>
+				<div class="card-feature">
+					<i class="fa-solid fa-headset"></i>
+					<div class="feature-content">
+						<span>Servicio al cliente 24/7</span>
+						<p>LLámenos 24/7 al 123-456-7890</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="container top-categories">
+				<h1 class="heading-1">Mejores Categorías</h1>
+				<div class="container-categories">
+
+					{% for categoria in categorias|slice:":3"  %}
+					<div class="{{categoria.clase_css}}">
+					<p>{{ categoria.nombreCategoria}}</p>
+					<span>Ver más</span>
+					</div>
+					{% endfor %}
+
+				</div>
+			</section>
+
+			<section class="container top-products">
+				<h1 class="heading-1">Mejores servicios</h1>
+
+				<div class="container-options">
+					<span class="active">Destacados</span>
+					<span>Más recientes</span>
+					<span>Mejores Vendidos</span>
+				</div>
+
+				<div class="container-products">
+					{% for p in productos|slice:"4:" %}
+					<!-- Producto 1 -->
+					<div class="card-product">
+						<div class="container-img">
+							{% if p.imagen %}
+							<img src="{{p.imagen.url}}" alt="Laptop">
+							{% endif %}
+							<span class="discount">-{{ p.desc }}</span>
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-eye"></i>
+								</span>
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="{{p.icono_1}}"></i> 
+								<i class="{{p.icono_2}}"></i> 
+								<i class="{{p.icono_3}}"></i> 
+								<i class="{{p.icono_4}}"></i> 
+								<i class="{{p.icono_5}}"></i>
+							</div>
+							<h3>{{p.nombre}}</h3>
+							<span class="add-cart">
+								<a href="shop/"><i class="fa-solid fa-basket-shopping"></i></a>
+							</span>
+							<p class="price">$ {{ p.calcular_precio_con_descuento }} <span> $ {{ p.precio }}</span></p>
+							
+						</div>
+					</div> 
+					{% endfor %}
+				</div>
+			</section>
+
+			<section class="gallery">
+				<img
+					src="{% static '../../static/css/img/I4.jpg' %}"
+					alt="Gallery Img1"
+					class="gallery-img-1"
+				/><img
+					src="{% static '../../static/css/img/I4.jpg' %}"
+					alt="Gallery Img2"
+					class="gallery-img-2"
+				/><img
+					src="{% static '../../static/css/img/I4.jpg' %}"
+					alt="Gallery Img3"
+					class="gallery-img-3"
+				/><img
+					src="{% static '../../static/css/img/I4.jpg' %}"
+					alt="Gallery Img4"
+					class="gallery-img-4"
+				/><img
+					src="{% static '../../static/css/img/I4.jpg' %}"
+					alt="Gallery Img5"
+					class="gallery-img-5"
+				/>
+			</section>
+
+			<section class="container specials">
+				<h1 class="heading-1">Especiales</h1>
+
+				<div class="container-products">
+					<!-- Producto 1 -->
+				{% for p in productos|slice:":4" %}
+					<div class="card-product">
+						<div class="container-img">
+							{% if p.imagen %}
+							<img src="{{p.imagen.url}}" alt="Laptop">
+							{% endif %}
+							<span class="discount">-{{ p.desc }}</span>
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-eye"></i>
+								</span>
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars">
+								<i class="{{p.icono_1}}"></i> 
+								<i class="{{p.icono_2}}"></i> 
+								<i class="{{p.icono_3}}"></i> 
+								<i class="{{p.icono_4}}"></i> 
+								<i class="{{p.icono_5}}"></i>
+							</div>
+							<h3>{{p.nombre}}</h3>
+							<span class="add-cart">
+								<a href="shop/"><i class="fa-solid fa-basket-shopping"></i></a>
+							</span>
+							<p class="price">$ {{ p.calcular_precio_con_descuento }} <span> $ {{ p.precio }}</span></p>
+							
+						</div>
+					</div> 
+					{% endfor %}
+					</div>
+				</div>
+			</section>
+
+			<section class="container blogs">
+				<h1 class="heading-1">Últimos Blogs</h1>	
+				<div class="container-blogs">
+					{% for b in blogs|slice:":3" %}
+					<div class="card-blog">
+						<div class="container-img">
+							{% if b.imagen %}
+							<img src="{{b.imagen.url}}" alt="Imagen Blog">
+							{% endif %}
+							<div class="button-group-blog">
+								<span>
+									<i class="fa-solid fa-magnifying-glass"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-link"></i>
+								</span>
+							</div>
+						</div>
+						<div class="content-blog">
+							<h3>{{b.titulo}}</h3>
+							<span>{{b.fecha}}</span>
+							<p>
+								{{b.descripcion}}
+							</p>
+							<div class="btn-read-more">Leer más</div>
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+			</section>
+		</main>
+
+		{% endblock %}
+	

@@ -1,0 +1,90 @@
+
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %} shop {% endblock %}
+
+
+
+{% block contenido %}
+
+    <div class="contenedor-formularios">
+           
+        <div class="contenido-tab">
+            <!-- carrito de compra-->  
+            <div id="iniciar-sesion">
+                <h1>carrito de compras</h1>
+                <form action="#" method="post">
+                    <div class="contenedor-input">
+                    <label>
+                        Producto <span class="req"></span>
+                    </label>
+                    <input type="text" value="">
+                </div>
+
+                <div class="contenedor-input">
+                    <label>
+                        Cantidad <span class="req"></span>
+                    </label>
+                    <input type= text value="">
+                </div>
+                
+                <input type="submit" class="button button-block" value="agregar al carrito">
+            </form>
+        </div>
+
+        <!-- comprar -->
+            <div id="registrarse">
+                <h1>comprar</h1>
+                <form action="#" method="post">
+                    <div class="fila-arriba">
+                        <div class="contenedor-input">
+                            <label>
+                                Nombre <span class="req">*</span>
+                            </label>
+                            <input type="text" required>
+                        </div>
+
+                        <div class="contenedor-input">
+                            <label>
+                                Apellido <span class="req">*</span>
+                            </label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            Usuario <span class="req">*</span>
+                        </label>
+                        <input type="text" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            Email <span class="req">*</span>
+                        </label>
+                        <input type="email" >
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            productos <span class="req"></span>
+                        </label>
+                        <input type="text" value="">
+                    </div>
+
+                    <div class="contenedor-input">
+                        <label>
+                            TOTAL <span class="req"></span>
+                        </label>
+                        <input type="text" >
+                    </div>
+
+                    <input type="submit" class="button button-block" value="comprar">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}

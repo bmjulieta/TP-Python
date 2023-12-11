@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block titulo %} Servicios {% endblock %}
+
+{% block contenido %}
+
+<div class="contenedor-formularios">
+    <ul class="contenedor-tabs">
+        <li class="tab tab-tercera active"><a href="#">Tus servicios</a></li>
+        <li class="tab tab-segunda"><a href="/create">Crear servicio</a></li>
+        <li class="tab tab-segunda"><a href="#editar-servicio">Editar servicio</a></li>
+        <li class="tab tab-primera"><a href="#eliminar-servicio">Eliminar Servicio</a></li>
+    </ul>
+    
+    <div class="contenido-tab">
+        <!-- Editar Servicio -->
+        <div id="editar-servicio" class="service-form">
+            <h1>Tus servicios</h1>
+            <hr>
+            <br>
+            <div class="container-products">
+                {% for s in serviciosB %}
+                <!-- Producto 1 -->
+                <div class="card-product" style="border: .75px solid; box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1)">
+                    <div class="container-img">
+                        {% if s.imagen %}
+                        <img src="{{s.imagen.url}}" alt="Laptop">
+                        {% endif %}
+                    </div>
+                    <p style="text-align: center; height: 75px; font-size: 10px;"><span style="font-weight: 500;">Descripcion: </span>{{s.descripcion}}</p>
+                    <div class="content-card-product">
+                        <h3>{{s.servicio}}</h3>
+                        <p class="price">$ {{ s.precio }}</p>
+                    </div>
+                    <a href="{% url 'edit' s.id %}"><input type="submit" class="button button-block" value="Editar servicio"></a>
+                    <a href="{% url 'delete' s.id %}"><input type="submit" class="button button-block" value="Eliminar servicio"></a>
+                </div> 
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

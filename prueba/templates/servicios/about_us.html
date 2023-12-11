@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block titulo %} Sobre Nosotros {% endblock %}
+
+{% block contenido %}
+<main id="main">
+  <!-- Team Section -->
+  {% for a in aboutus %}
+  <section class="box">
+    {% if a.imagen %}
+    <img src="{{a.imagen.url}}" width="180" alt="" class="box-img">
+    {% endif %}
+    <h1>{{a.nombre}}</h1>
+    <h2>{{a.rol}}</h2>
+    <ul>
+      <li><a href="{{ a.linkedIng }}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+    </ul>
+  </section>
+  {% endfor %}
+  
+
+</main>
+{% endblock %}
+
+
+

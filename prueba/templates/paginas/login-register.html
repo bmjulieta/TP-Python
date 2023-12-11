@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block titulo %} Login {% endblock %}
+
+{% block contenido %}
+
+   <!-- Formularios--> 
+    <div class="contenedor-formularios">
+           <!-- Links de los formularios  -->
+        <ul class="contenedor-tabs">
+            <li class="tab tab-segunda active"><a href="#">Iniciar sesión</a></li>
+            <li class="tab tab-primera"><a href="#">Registrarse</a></li>
+        </ul>
+
+
+        <div class="contenido-tab">
+                <!-- Iniciar Sesion -->
+            <div id="iniciar-sesion">
+                <h1>Iniciar Sesión</h1>
+                <form action="#" method="post">
+                    <div class="contenedor-input">
+                        <label>
+                            Usuario <span class="req"></span>
+                        </label>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="contenedor-input">
+                        <label>
+                            Contraseña <span class="req"></span>
+                        </label>
+                        <input type="password" required>
+                    </div>
+                    <p class="forgot"><a href="#" style="color: white; text-decoration: none; font-size: 10px;">¿Se te olvidó la contraseña?</a></p>
+                    <p class="forgot"><a href="/regi" style="color: white; text-decoration: none; font-size: 10px;">¿Sos nuevo? ¡Registrate!</a></p>
+                    <br>
+                    <a href="/servicios"><input type="button" class="button button-block" value="Iniciar Sesión"></a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+

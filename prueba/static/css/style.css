@@ -1,0 +1,117 @@
+.container_prueba {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-tabs{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.tab a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.2rem;
+	padding: 10px 15px;
+	border-radius: 5px;
+	background-color: #24B2B5;
+	transition: background-color 0.3s ease;
+}
+
+
+.tab a:hover {
+	background-color: #0A1135;
+}
+
+.contenido-tab {
+	background-color: #162148;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.formulario {
+	display: none;
+}
+
+.formulario h1 {
+	color: #fff;
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.contenedor-input {
+	margin-bottom: 20px;
+}
+
+.contenedor-input label {
+	color: #fff;
+	font-size: 1rem;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.contenedor-input input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.fila-arriba {
+	display: flex;
+	justify-content: space-between;
+}
+
+.forgot {
+	color: #fff;
+	font-size: 0.9rem;
+	margin-top: 10px;
+}
+
+.button {
+	background-color: #24B2B5;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.button:hover {
+	background-color: #0A1135;
+}
+.prueba {
+    text-align: center;
+}
+.label_prueba {
+    display: block;
+    margin-bottom: 8px;
+}
+.input_prueba {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+.button_prueba {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button_prueba:hover {
+    background-color: #2980b9;
+}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block titulo %} Login {% endblock %}
+
+{% block contenido %}
+
+   <!-- Formularios--> 
+    <div class="contenedor-formularios">
+           <!-- Links de los formularios  -->
+        <ul class="contenedor-tabs">
+            <li class="tab tab-segunda active"><a href="#">Iniciar Sesión</a></li>
+            <li class="tab tab-primera"><a href="#">Registrarse</a></li>
+        </ul>
+
+
+        <div class="contenido-tab">
+        <!-- Registrarse -->
+            <div id="registrarse">
+                <h1>Registrarse</h1>
+                <form action="#" method="#">
+                    <div class="fila-arriba">
+                        <div class="contenedor-input">
+                            <label>
+                                Nombre <span class="req"></span>
+                            </label>
+                            <input type="text" required>
+                        </div>
+
+                        <div class="contenedor-input">
+                            <label>
+                                Apellido <span class="req"></span>
+                            </label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            Usuario <span class="req">*</span>
+[23:54]
+</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            Email <span class="req"></span>
+                        </label>
+                        <input type="email" required>
+                    </div>
+                    <div class="contenedor-input">
+                        <label>
+                            Contraseña <span class="req"></span>
+                        </label>
+                        <input type="password" required>
+                    </div>
+
+                    <div class="contenedor-input">
+                        <label>
+                            Repetir Contraseña <span class="req">*</span>
+                        </label>
+                        <input type="password" required>
+                    </div>
+                    <p class="forgot"><a href="/login" style="color: white; text-decoration: none; font-size: 10px;">¿Tenés cuenta? ¡Accedé a ella!</a></p>
+                    <br>
+                    <a href="/login"><input type="button" class="button button-block" value="Registrate"></a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
